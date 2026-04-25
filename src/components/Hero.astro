@@ -1,0 +1,60 @@
+---
+import { WHATSAPP_URL } from '../config/contact';
+---
+
+<section
+  class="max-w-[1280px] mx-auto px-16 py-32 flex flex-col md:flex-row items-center gap-16"
+>
+  <div class="flex-1 space-y-8">
+    <div
+      class="inline-flex items-center gap-3 px-4 py-1.5 bg-surface-container-low rounded-full border border-outline-variant/30"
+    >
+      <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+      <span
+        class="text-[10px] font-mono-label text-on-surface-variant uppercase tracking-widest"
+        >Available for new projects</span
+      >
+    </div>
+    <h1 class="font-h1 text-h1 text-on-surface uppercase headline-wide">
+      Stop managing your business manually.
+      <span class="text-primary">I build simple web tools for you.</span>
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+      Custom web tools ready in 2-3 days. Simple, practical, and ready to use.
+      Built for efficiency, not complexity.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-8 pt-4">
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener"
+        class="bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg indigo-glow transition-all active:scale-95 shadow-xl shadow-primary/20 inline-block text-center"
+        >Message me on WhatsApp</a
+      >
+      <div class="flex flex-col justify-center">
+        <span
+          class="text-[10px] font-mono-label text-outline uppercase tracking-[0.2em] mb-1"
+          >Expertise</span
+        >
+        <p class="text-on-surface-variant text-sm font-medium">
+          10+ years of System Architecture
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex-1 relative w-full aspect-square max-w-lg">
+    <div
+      class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="relative glass-panel w-full h-full rounded-2xl overflow-hidden flex items-center justify-center border border-white/10"
+    >
+      <img
+        class="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+        src="/images/hero-architecture.jpg"
+        alt="Monochromatic 3D render of abstract architectural geometric structure"
+      />
+    </div>
+  </div>
+</section>

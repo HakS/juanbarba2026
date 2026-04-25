@@ -1,0 +1,34 @@
+---
+import { WHATSAPP_URL } from '../config/contact';
+---
+
+<nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+  <div
+    class="glass-panel h-14 px-8 rounded-full flex items-center gap-8 border border-white/10 bg-zinc-950/40"
+  >
+    <div class="text-lg font-bold tracking-tighter uppercase font-h1">Juan</div>
+    <div class="h-4 w-px bg-white/10 hidden md:block"></div>
+    <div class="hidden md:flex gap-8 items-center">
+      <a
+        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors"
+        href="#how-it-works">How it Works</a
+      >
+      <a
+        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors"
+        href="#case-study">Case Study</a
+      >
+      <a
+        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors"
+        href="#about">About</a
+      >
+    </div>
+    <div class="h-4 w-px bg-white/10 hidden md:block"></div>
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener"
+      class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-primary hover:text-white transition-colors"
+      >Message</a
+    >
+  </div>
+</nav>

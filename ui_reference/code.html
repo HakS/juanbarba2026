@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Juan | Architect of Systems - Simple Web Tools Specialist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#8691a7",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "outline": "#908fa0",
+                    "primary-container": "#6366F1",
+                    "inverse-primary": "#494bd6",
+                    "on-error": "#690005",
+                    "secondary": "#bec6e0",
+                    "surface-container": "#1d2022",
+                    "on-secondary": "#283044",
+                    "secondary-fixed": "#dae2fd",
+                    "secondary-container": "#3f465c",
+                    "on-primary-container": "#ffffff",
+                    "outline-variant": "#464554",
+                    "on-surface-variant": "#c7c4d7",
+                    "inverse-surface": "#e0e3e5",
+                    "primary": "#6366F1",
+                    "surface-dim": "#101415",
+                    "on-tertiary": "#263143",
+                    "background": "#101415",
+                    "surface-container-highest": "#323537",
+                    "tertiary": "#bcc7de",
+                    "on-secondary-container": "#adb4ce",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#363a3b",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-background": "#e0e3e5",
+                    "surface": "#101415",
+                    "tertiary-fixed": "#d8e3fb",
+                    "surface-container-high": "#272a2c",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#191c1e",
+                    "on-primary-fixed": "#07006c",
+                    "on-tertiary-fixed": "#111c2d",
+                    "on-surface": "#e0e3e5",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#6366F1",
+                    "on-tertiary-container": "#1f2a3c",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "surface-variant": "#323537",
+                    "surface-container-lowest": "#0b0f10",
+                    "primary-fixed": "#e1e0ff",
+                    "inverse-on-surface": "#2d3133"
+            },
+            "borderRadius": {
+                    "DEFAULT": "8px",
+                    "lg": "8px",
+                    "xl": "12px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-page": "64px",
+                    "container-max": "1280px",
+                    "section-gap": "128px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Space Grotesk"],
+                    "h2": ["Inter"],
+                    "h1": ["Inter"],
+                    "mono-label": ["Space Grotesk"],
+                    "body-md": ["Space Grotesk"],
+                    "h3": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h2": ["2.75rem", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "h1": ["4rem", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "800"}],
+                    "mono-label": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                    "body-md": ["1rem", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h3": ["1.75rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+        .indigo-glow:hover {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
+        }
+        .recessed {
+            box-shadow: inset 4px 4px 12px rgba(0,0,0,0.5), inset -1px -1px 2px rgba(255,255,255,0.05);
+        }
+        .headline-tracking {
+            letter-spacing: -0.05em;
+        }
+        @media (min-width: 768px) {
+            .headline-wide {
+                font-stretch: 110%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30 selection:text-white">
+<!-- Minimalist Centered TopNavBar -->
+<nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+<div class="glass-panel h-14 px-8 rounded-full flex items-center gap-8 border border-white/10 bg-zinc-950/40">
+<div class="text-lg font-bold tracking-tighter uppercase font-h1">Juan</div>
+<div class="h-4 w-px bg-white/10 hidden md:block"></div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors" href="#">How it Works</a>
+<a class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors" href="#">Case Study</a>
+<a class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors" href="#">About</a>
+</div>
+<div class="h-4 w-px bg-white/10 hidden md:block"></div>
+<button class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-primary hover:text-white transition-colors">Message</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-[1280px] mx-auto px-16 py-32 flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 space-y-8">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 bg-surface-container-low rounded-full border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-mono-label text-on-surface-variant uppercase tracking-widest">Available for new projects</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface uppercase headline-wide">Stop managing your business manually. <span class="text-primary">I build simple web tools for you.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Custom web tools ready in 2-3 days. Simple, practical, and ready to use. Built for efficiency, not complexity.</p>
+<div class="flex flex-col sm:flex-row gap-8 pt-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg indigo-glow transition-all active:scale-95 shadow-xl shadow-primary/20">Message me on WhatsApp</button>
+<div class="flex flex-col justify-center">
+<span class="text-[10px] font-mono-label text-outline uppercase tracking-[0.2em] mb-1">Expertise</span>
+<p class="text-on-surface-variant text-sm font-medium">10+ years of System Architecture</p>
+</div>
+</div>
+</div>
+<div class="flex-1 relative w-full aspect-square max-w-lg">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl"></div>
+<div class="relative glass-panel w-full h-full rounded-2xl overflow-hidden flex items-center justify-center border border-white/10">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="monochromatic 3D render of abstract architectural geometric structure with sharp edges and soft dramatic lighting on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsqN5X10zFA-sVpLeokFSSkdymzBpvR4sTeglrbf3mg3vK8xCr1aoUPD23VDbVP-T8ZMNwSuVfDwHmW6jmcI3LvuNYhAOCGzlGnrJqZl-_rN32oZx4SAkoacfNfiHFFUDOZbP7eLc459O91fn9lcgwz6YvLioBuMjH6FLXYvnIPO7Th60-oNt7aXEQg5qMYmLO322nHkdZAuQZoTnfXadXTPNHfPEkMdudilVB-DQ6TXKXyTnbsalUGGfxq8Skj73b0EWoAPFY7JU"/>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="max-w-[1280px] mx-auto px-16 py-section-gap">
+<div class="flex flex-col items-center text-center mb-24">
+<span class="text-mono-label text-primary uppercase tracking-[0.3em] mb-6 text-[10px]">The Friction</span>
+<h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">Are you stuck in manual loops?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="glass-panel p-12 rounded-xl space-y-8">
+<span class="material-symbols-outlined text-3xl text-primary/70" data-icon="table_view">table_view</span>
+<h3 class="font-h3 text-h3 uppercase">Excel Overload</h3>
+<p class="text-on-surface-variant leading-relaxed">Spreadsheets that have become too slow, confusing, or prone to accidental data deletion.</p>
+</div>
+<div class="glass-panel p-12 rounded-xl space-y-8">
+<span class="material-symbols-outlined text-3xl text-primary/70" data-icon="chat">chat</span>
+<h3 class="font-h3 text-h3 uppercase">Chat Chaos</h3>
+<p class="text-on-surface-variant leading-relaxed">Losing track of requests in a sea of messages. No clear overview of what's pending or done.</p>
+</div>
+<div class="glass-panel p-12 rounded-xl space-y-8">
+<span class="material-symbols-outlined text-3xl text-primary/70" data-icon="history">history</span>
+<h3 class="font-h3 text-h3 uppercase">Manual Cycles</h3>
+<p class="text-on-surface-variant leading-relaxed">Doing the same data entry over and over again instead of focusing on growing your business.</p>
+</div>
+</div>
+</section>
+<!-- Solution Section -->
+<section class="bg-surface-container-low/30 py-section-gap border-y border-white/5">
+<div class="max-w-[1280px] mx-auto px-16 flex flex-col md:flex-row items-center gap-24">
+<div class="flex-1">
+<div class="recessed p-4 rounded-2xl bg-zinc-950/50">
+<img class="w-full h-auto rounded-xl opacity-80" data-alt="Abstract 3D digital wireframe structure representing system architecture with glowing nodes and dark minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6eJLfDlg9aGVs4ptEEG7AMCv0LKYzcUmMeL0GRx112kdmceVNmIBa5KmyWngXtx-sqnnxVplwD4Z3KEEpTREfP88ZGBkkVVqxTUn6kjCZo0ww2HdykPOffzrFnsW6QAAb1H3guAT1SxugZR7-NCzx07-YSyKJwumaqJDJOWuhx0D6Ax43njfs1Eflvw6ICtGUD66GnRG5BLyA5TNoruSnNTwRpNvyunNc19aZfViaLqi7nxUVSS3jo4G5Yc14Oi_Ez4uYzZkT1UI"/>
+</div>
+</div>
+<div class="flex-1 space-y-12">
+<h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">Automating the manual into one-click tools.</h2>
+<div class="grid grid-cols-2 gap-10">
+<div class="space-y-3">
+<h4 class="text-white font-bold text-sm uppercase tracking-wider">Browser-based</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Access from any device without installing anything.</p>
+</div>
+<div class="space-y-3">
+<h4 class="text-white font-bold text-sm uppercase tracking-wider">Zero Setup</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Lives in the cloud, always up to date and ready to work.</p>
+</div>
+<div class="space-y-3">
+<h4 class="text-white font-bold text-sm uppercase tracking-wider">Pure Simplicity</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Designed with a "one-button" philosophy. No training needed.</p>
+</div>
+<div class="space-y-3">
+<h4 class="text-white font-bold text-sm uppercase tracking-wider">Bespoke Build</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">I build exactly what you need, not generic bloated software.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Examples Grid -->
+<section class="max-w-[1280px] mx-auto px-16 py-section-gap">
+<div class="text-center mb-24">
+<h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">Built for Action</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="group glass-panel rounded-2xl overflow-hidden flex flex-col hover:border-primary/50 transition-all">
+<div class="p-10 flex justify-between items-start">
+<div>
+<h4 class="font-h3 text-h3 uppercase mb-3">Client Management</h4>
+<p class="text-on-surface-variant">Tracks customer history, preferences, and total spending in one view.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="groups">groups</span>
+</div>
+<div class="mt-auto px-10 pb-10">
+<div class="h-32 bg-zinc-950/80 rounded-lg border border-white/5 flex items-end p-4 gap-2 recessed">
+<div class="h-1/2 w-full bg-primary/20 rounded"></div>
+<div class="h-2/3 w-full bg-primary/40 rounded"></div>
+<div class="h-full w-full bg-primary/60 rounded"></div>
+<div class="h-3/4 w-full bg-primary/40 rounded"></div>
+</div>
+</div>
+</div>
+<div class="group glass-panel rounded-2xl overflow-hidden flex flex-col hover:border-primary/50 transition-all">
+<div class="p-10 flex justify-between items-start">
+<div>
+<h4 class="font-h3 text-h3 uppercase mb-3">Order Tracking</h4>
+<p class="text-on-surface-variant">Visualizes status from "Pending" to "Delivered" in one tap.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="mt-auto px-10 pb-10">
+<div class="flex gap-4">
+<div class="flex-1 h-20 bg-zinc-950/80 border border-white/5 rounded-lg flex items-center justify-center font-mono-label text-primary recessed">PENDING</div>
+<div class="flex-1 h-20 bg-zinc-950/80 border border-white/5 rounded-lg flex items-center justify-center font-mono-label text-emerald-500 recessed">DONE</div>
+</div>
+</div>
+</div>
+<div class="group glass-panel rounded-2xl overflow-hidden flex flex-col hover:border-primary/50 transition-all">
+<div class="p-10 flex justify-between items-start">
+<div>
+<h4 class="font-h3 text-h3 uppercase mb-3">Online Sync Form</h4>
+<p class="text-on-surface-variant">Syncs data automatically with your database and notifies you instantly.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="dynamic_form">dynamic_form</span>
+</div>
+<div class="mt-auto px-10 pb-10">
+<div class="space-y-3">
+<div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden recessed">
+<div class="w-2/3 h-full bg-primary shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-mono-label text-outline uppercase tracking-widest">
+<span>SYNCING DATA</span>
+<span>65%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group glass-panel rounded-2xl overflow-hidden flex flex-col hover:border-primary/50 transition-all">
+<div class="p-10 flex justify-between items-start">
+<div>
+<h4 class="font-h3 text-h3 uppercase mb-3">Booking System</h4>
+<p class="text-on-surface-variant">Manages calendars effortlessly. Let clients book their own time slots.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="calendar_month">calendar_month</span>
+</div>
+<div class="mt-auto px-10 pb-10">
+<div class="grid grid-cols-7 gap-2">
+<div class="h-6 bg-white/5 rounded-sm recessed"></div>
+<div class="h-6 bg-primary rounded-sm shadow-[0_0_10px_rgba(99,102,241,0.3)]"></div>
+<div class="h-6 bg-white/5 rounded-sm recessed"></div>
+<div class="h-6 bg-white/5 rounded-sm recessed"></div>
+<div class="h-6 bg-primary rounded-sm shadow-[0_0_10px_rgba(99,102,241,0.3)]"></div>
+<div class="h-6 bg-white/5 rounded-sm recessed"></div>
+<div class="h-6 bg-white/5 rounded-sm recessed"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Study -->
+<section class="max-w-[1280px] mx-auto px-16 py-section-gap">
+<div class="glass-panel rounded-3xl p-20 flex flex-col md:flex-row gap-20 items-center border border-white/5">
+<div class="flex-1">
+<span class="text-[10px] font-mono-label text-primary uppercase tracking-[0.3em] mb-8 block">Real Impact</span>
+<h2 class="font-h2 text-h2 mb-10 uppercase headline-wide">Chaos to 1-Click.</h2>
+<blockquote class="text-body-lg text-on-surface mb-10 italic leading-relaxed opacity-90 border-l-2 border-primary/30 pl-8">
+                    "We were losing hours everyday just answering 'where is my order?' in WhatsApp. Juan built a simple dashboard where we just click once, and the customer gets an automated update. We saved 15+ hours a week and eliminated 90% of our manual tracking errors."
+                </blockquote>
+<div class="flex gap-16">
+<div>
+<span class="block text-4xl font-extrabold text-white mb-2">15h+</span>
+<span class="text-[10px] font-mono-label text-outline uppercase tracking-widest">Weekly Time Saved</span>
+</div>
+<div>
+<span class="block text-4xl font-extrabold text-white mb-2">90%</span>
+<span class="text-[10px] font-mono-label text-outline uppercase tracking-widest">Reduced Errors</span>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full">
+<div class="recessed rounded-xl p-4 bg-zinc-950/80">
+<img class="rounded-lg w-full opacity-70" data-alt="Extreme close-up of a high-end clean software interface showing a minimalist data visualization dashboard with dark colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xaqjfCaow4HfDBTznO1-qA8OiWqtjT3-qdwZUkpP4PCZBVD6I-TV6HpgYS2IfOQ4usz_7RO2WvQbxUAqUdWTsGlWTdCj17H5iP_cxxwBZYkNKsi96w2OkZRGzFoxFLPHQlBq0R9ZqCP0Ezui0Et6KMk6Ntpb6ffLMfxjCsmBuea6V4CYp-t14AfgzUu-eJ_cr_XP-Lg97831OY2XU2xI3WKzwpAAbyvq2GIc0bEwSEhNmRs2gcOPe4m6r6_-lS91AIqbIHXkrWQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="max-w-[1280px] mx-auto px-16 py-section-gap">
+<div class="text-center mb-24">
+<h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">The Protocol</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<span class="text-6xl font-black text-white/5 block leading-none">01</span>
+<h4 class="text-sm font-bold text-white uppercase tracking-wider">Analysis</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">A 15-minute diagnostic call to understand your manual pain points.</p>
+</div>
+<div class="space-y-6">
+<span class="text-6xl font-black text-white/5 block leading-none">02</span>
+<h4 class="text-sm font-bold text-white uppercase tracking-wider">Blueprint</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">A clear execution plan and fixed price. Zero ambiguity.</p>
+</div>
+<div class="space-y-6">
+<span class="text-6xl font-black text-white/5 block leading-none">03</span>
+<h4 class="text-sm font-bold text-white uppercase tracking-wider">Synthesis</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">I architect the tool. You watch it come to life via a private link.</p>
+</div>
+<div class="space-y-6">
+<span class="text-6xl font-black text-white/5 block leading-none">04</span>
+<h4 class="text-sm font-bold text-white uppercase tracking-wider">Handover</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Live in 72 hours. Guided onboarding and full ownership keys.</p>
+</div>
+</div>
+</section>
+<!-- Personal Section -->
+<section class="max-w-[1280px] mx-auto px-16 py-section-gap">
+<div class="flex flex-col md:flex-row gap-24 items-center">
+<div class="w-full md:w-1/3 aspect-[4/5] glass-panel rounded-2xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover contrast-125 brightness-90" data-alt="Professional portrait of a middle-aged man with a friendly expression, wearing a dark sweater, studio lighting, dark neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVtecAZ3bJFEK5tijY44d16BmtSufzS8L1mRTVDYNGwQRYRelrbnNFEQTdHsYn-UENDtI02lW4a3C7le5rfdIBs6m6UQvHs33uzJfdcOy5H9L4v9_mbRMc7lRsXxu5VZeyKXGHlFCnnVQzLal9JOT8zPuol85ZQPmA4opQkiUBBYD9t-mkPThigbj2d3fWoN8zm7UEmgIOvdobONs252n8dJvtjcfym_oRkSsKQjmGGkBeo6ABFn2HZPxIlp85uJbkaEAIktbusXQ"/>
+</div>
+<div class="flex-1 space-y-10">
+<h2 class="font-h2 text-h2 uppercase headline-wide">Meet Juan.</h2>
+<div class="space-y-6 text-body-lg text-on-surface-variant">
+<p>With over 10 years as a Full-Stack developer, I've seen complex systems fail because they were over-engineered. My passion is the inverse: creating the simplest possible solution for complex problems.</p>
+<p>I don't just write code; I architect systems that work for you, so you don't have to work for the system.</p>
+</div>
+<div class="pt-10 border-t border-white/5">
+<span class="text-[10px] font-mono-label text-outline uppercase tracking-[0.3em] block mb-6">Stack</span>
+<div class="flex flex-wrap gap-4 text-xs font-mono-label text-primary uppercase">
+<span class="px-5 py-2.5 recessed bg-zinc-950/80 rounded-full border border-white/5">React</span>
+<span class="px-5 py-2.5 recessed bg-zinc-950/80 rounded-full border border-white/5">Node.js</span>
+<span class="px-5 py-2.5 recessed bg-zinc-950/80 rounded-full border border-white/5">PostgreSQL</span>
+<span class="px-5 py-2.5 recessed bg-zinc-950/80 rounded-full border border-white/5">AWS Cloud</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-[1280px] mx-auto px-16 py-section-gap mb-32">
+<div class="glass-panel rounded-[3rem] p-24 text-center space-y-12 relative overflow-hidden border border-white/5">
+<div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-32 -left-32 w-96 h-96 bg-indigo-900/10 rounded-full blur-[120px]"></div>
+<h2 class="font-h1 text-h1 text-on-surface uppercase headline-wide relative z-10">Simplify your workflow.</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto relative z-10 opacity-80">Stop doing manually what a tool can do in seconds. Let's scale your operations.</p>
+<button class="relative z-10 bg-primary text-on-primary px-12 py-6 rounded-xl font-bold text-xl indigo-glow transition-all active:scale-95 shadow-2xl shadow-primary/30">Message me on WhatsApp</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 py-20 bg-zinc-950">
+<div class="max-w-[1280px] mx-auto px-16 flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="text-xs font-bold uppercase tracking-[0.2em] text-white/40 font-h1">Juan © 2024</div>
+<div class="flex gap-12 text-[10px] font-mono-label uppercase tracking-[0.2em] text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Architecture</a>
+<a class="hover:text-primary transition-colors" href="#">Process</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-outline">
+            Built for Efficiency
+        </div>
+</div>
+</footer>
+</body></html>
