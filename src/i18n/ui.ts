@@ -13,7 +13,7 @@ const yearsExperience = new Date().getFullYear() - CAREER_START_YEAR;
 export const ui = {
   en: {
     meta: {
-      title: 'Juan | Architect of Systems - Simple Web Tools Specialist',
+      title: 'Juan Barba | Architect of Systems - Simple Web Tools Specialist',
       description:
         'Custom web tools ready in 2-3 days. Simple, practical, and ready to use. Built for efficiency, not complexity.',
     },
@@ -164,7 +164,7 @@ export const ui = {
   },
   es: {
     meta: {
-      title: 'Juan | Arquitecto de Sistemas — Herramientas Web Simples a Medida',
+      title: 'Juan Barba | Arquitecto de Sistemas — Herramientas Web Simples a Medida',
       description:
         'Herramientas web a medida listas en 2-3 días. Simples, prácticas y listas para usar. Construidas para la eficiencia, no para la complejidad.',
     },
