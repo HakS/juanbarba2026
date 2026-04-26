@@ -18,7 +18,7 @@ export const ui = {
         'Custom web tools ready in 2-3 days. Simple, practical, and ready to use. Built for efficiency, not complexity.',
     },
     nav: {
-      howItWorks: 'How it Works',
+      howItWorks: 'How I Work',
       caseStudy: 'Case Study',
       about: 'About',
       message: 'Message',
@@ -169,7 +169,7 @@ export const ui = {
         'Herramientas web a medida listas en 2-3 días. Simples, prácticas y listas para usar. Construidas para la eficiencia, no para la complejidad.',
     },
     nav: {
-      howItWorks: 'Cómo Funciona',
+      howItWorks: 'Cómo Trabajo',
       caseStudy: 'Caso de Éxito',
       about: 'Sobre Mí',
       message: 'Escribir',

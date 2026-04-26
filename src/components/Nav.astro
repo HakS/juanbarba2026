@@ -13,8 +13,11 @@ const t = useTranslations(lang);
   >
     <a
       href={lang === 'en' ? '/' : '/es/'}
-      class="text-lg font-bold tracking-tighter uppercase font-h1">Juan</a
+      class="flex items-center"
+      aria-label="Juan Barba"
     >
+      <img src="/logo.svg" alt="Juan Barba" class="h-8 w-auto" />
+    </a>
     <div class="h-4 w-px bg-white/10 hidden md:block"></div>
     <div class="hidden md:flex gap-6 items-center">
       <a
