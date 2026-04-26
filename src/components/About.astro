@@ -8,7 +8,7 @@ const stack = ['Angular', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'AWS Cloud
 <section id="about" class="max-w-[1280px] mx-auto px-16 py-section-gap">
   <div class="flex flex-col md:flex-row gap-24 items-center">
     <div
-      class="w-full md:w-1/3 aspect-[4/5] glass-panel rounded-2xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700"
+      class="w-full md:w-1/3 aspect-[4/5] glass-panel rounded-2xl overflow-hidden border border-on-surface/10 grayscale hover:grayscale-0 transition-all duration-700"
       data-reveal
     >
       <img
@@ -22,7 +22,7 @@ const stack = ['Angular', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'AWS Cloud
       <div class="space-y-6 text-body-lg text-on-surface-variant">
         {t.paragraphs.map((p) => <p>{p}</p>)}
       </div>
-      <div class="pt-10 border-t border-white/5">
+      <div class="pt-10 border-t border-on-surface/10">
         <span
           class="text-[10px] font-mono-label text-outline uppercase tracking-[0.3em] block mb-6"
           >{t.stackLabel}</span
@@ -32,7 +32,7 @@ const stack = ['Angular', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'AWS Cloud
         >
           {
             stack.map((tag) => (
-              <span class="px-5 py-2.5 recessed bg-zinc-950/80 rounded-full border border-white/5">
+              <span class="px-5 py-2.5 recessed bg-surface-container-lowest rounded-full border border-on-surface/10">
                 {tag}
               </span>
             ))

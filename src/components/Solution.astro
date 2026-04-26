@@ -5,13 +5,13 @@ const t = useTranslations(getLangFromUrl(Astro.url)).solution;
 ---
 
 <section
-  class="bg-surface-container-low/30 py-section-gap border-y border-white/5"
+  class="bg-surface-container-low/30 py-section-gap border-y border-on-surface/10"
 >
   <div
     class="max-w-[1280px] mx-auto px-16 flex flex-col md:flex-row items-center gap-24"
   >
     <div class="flex-1" data-reveal>
-      <div class="recessed p-4 rounded-2xl bg-zinc-950/50">
+      <div class="recessed p-4 rounded-2xl bg-surface-container-lowest">
         <img
           class="w-full h-auto rounded-xl opacity-80"
           src="/images/solution-wireframe.jpg"
@@ -27,7 +27,7 @@ const t = useTranslations(getLangFromUrl(Astro.url)).solution;
         {
           t.features.map((f) => (
             <div class="space-y-3">
-              <h4 class="text-white font-bold text-sm uppercase tracking-wider">
+              <h4 class="text-on-surface font-bold text-sm uppercase tracking-wider">
                 {f.title}
               </h4>
               <p class="text-on-surface-variant text-sm leading-relaxed">

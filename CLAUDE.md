@@ -52,6 +52,7 @@ bun run preview
 ## Conventions
 
 - **Design tokens**: live in the `@theme` block in `src/styles/global.css`. Don't reintroduce a `tailwind.config.{js,mjs}` — Tailwind v4 reads tokens from CSS.
+- **Theming**: the site auto-switches between dark (default) and light via `prefers-color-scheme`. Dark tokens live in the `@theme` block; light tokens override them in a `@media (prefers-color-scheme: light)` block at the bottom of `global.css`. **Always use semantic tokens** (`text-on-surface`, `bg-surface-container-low`, `bg-on-surface/10`, etc.) — never `text-white` / `bg-zinc-*` / `bg-white/X`, which only render correctly in one theme.
 - **Custom utilities**: `.glass-panel`, `.recessed`, `.indigo-glow`, `.headline-wide` are defined once in `global.css`. Reuse them rather than re-implementing the effect inline.
 - **Contact links**: WhatsApp / email URLs must come from `src/config/contact.ts` — there's no other source of truth.
 - **Sections**: each page section is its own `.astro` component. Add a new section by creating one and importing it from `src/pages/index.astro`.

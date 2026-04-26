@@ -18,10 +18,10 @@ const t = useTranslations(getLangFromUrl(Astro.url)).process;
           data-reveal="x"
           style={`--reveal-delay: ${i * 180}`}
         >
-          <span class="text-6xl font-black text-white/5 block leading-none">
+          <span class="text-6xl font-black text-on-surface/5 block leading-none">
             {String(i + 1).padStart(2, '0')}
           </span>
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider">
+          <h4 class="text-sm font-bold text-on-surface uppercase tracking-wider">
             {s.title}
           </h4>
           <p class="text-on-surface-variant text-sm leading-relaxed">{s.body}</p>

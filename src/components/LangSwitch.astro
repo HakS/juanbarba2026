@@ -16,7 +16,7 @@ const hrefFor: Record<Lang, string> = {
   {
     (Object.keys(languages) as Lang[]).map((code, i) => (
       <>
-        {i > 0 && <span class="text-white/20">/</span>}
+        {i > 0 && <span class="text-on-surface/20">/</span>}
         <a
           href={hrefFor[code]}
           data-lang={code}
@@ -24,7 +24,7 @@ const hrefFor: Record<Lang, string> = {
           class:list={[
             'px-1 transition-colors',
             code === lang
-              ? 'text-white'
+              ? 'text-on-surface'
               : 'text-on-surface-variant hover:text-primary',
           ]}
         >

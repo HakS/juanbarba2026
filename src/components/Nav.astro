@@ -9,38 +9,41 @@ const t = useTranslations(lang);
 
 <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
   <div
-    class="glass-panel h-14 px-8 rounded-full flex items-center gap-6 border border-white/10 bg-zinc-950/40"
+    class="glass-panel h-14 px-8 rounded-full flex items-center gap-6 border border-on-surface/10 bg-surface-container-low/60"
   >
     <a
       href={lang === 'en' ? '/' : '/es/'}
       class="flex items-center"
       aria-label="Juan Barba"
     >
-      <img src="/logo.svg" alt="Juan Barba" class="h-8 w-auto" />
+      <picture>
+        <source srcset="/logo-light.svg" media="(prefers-color-scheme: light)" />
+        <img src="/logo.svg" alt="Juan Barba" class="h-8 w-auto" />
+      </picture>
     </a>
-    <div class="h-4 w-px bg-white/10 hidden md:block"></div>
+    <div class="h-4 w-px bg-on-surface/10 hidden md:block"></div>
     <div class="hidden md:flex gap-6 items-center">
       <a
-        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors"
+        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors"
         href="#how-it-works">{t.nav.howItWorks}</a
       >
       <a
-        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors"
+        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors"
         href="#case-study">{t.nav.caseStudy}</a
       >
       <a
-        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors"
+        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors"
         href="#about">{t.nav.about}</a
       >
     </div>
-    <div class="h-4 w-px bg-white/10 hidden md:block"></div>
+    <div class="h-4 w-px bg-on-surface/10 hidden md:block"></div>
     <LangSwitch />
-    <div class="h-4 w-px bg-white/10 hidden md:block"></div>
+    <div class="h-4 w-px bg-on-surface/10 hidden md:block"></div>
     <a
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener"
-      class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-primary hover:text-white transition-colors"
+      class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-primary hover:text-on-surface transition-colors"
       >{t.nav.message}</a
     >
   </div>

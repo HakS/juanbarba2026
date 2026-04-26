@@ -5,11 +5,11 @@ const t = useTranslations(getLangFromUrl(Astro.url)).footer;
 const year = new Date().getFullYear();
 ---
 
-<footer class="w-full border-t border-white/5 py-20 bg-zinc-950">
+<footer class="w-full border-t border-on-surface/10 py-20 bg-surface-container-lowest">
   <div
     class="max-w-[1280px] mx-auto px-16 flex flex-col md:flex-row justify-between items-center gap-10"
   >
-    <div class="text-xs font-bold uppercase tracking-[0.2em] text-white/40 font-h1">
+    <div class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface/40 font-h1">
       Juan © {year}
     </div>
     <div

@@ -6,7 +6,7 @@ const t = useTranslations(getLangFromUrl(Astro.url)).caseStudy;
 
 <section id="case-study" class="max-w-[1280px] mx-auto px-16 py-section-gap">
   <div
-    class="glass-panel rounded-3xl p-20 flex flex-col md:flex-row gap-20 items-center border border-white/5"
+    class="glass-panel rounded-3xl p-20 flex flex-col md:flex-row gap-20 items-center border border-on-surface/10"
   >
     <div class="flex-1">
       <span
@@ -25,7 +25,7 @@ const t = useTranslations(getLangFromUrl(Astro.url)).caseStudy;
         {
           t.stats.map((s) => (
             <div>
-              <span class="block text-4xl font-extrabold text-white mb-2">
+              <span class="block text-4xl font-extrabold text-on-surface mb-2">
                 {s.value}
               </span>
               <span class="text-[10px] font-mono-label text-outline uppercase tracking-widest">
@@ -37,7 +37,7 @@ const t = useTranslations(getLangFromUrl(Astro.url)).caseStudy;
       </div>
     </div>
     <div class="flex-1 w-full" data-reveal>
-      <div class="recessed rounded-xl p-4 bg-zinc-950/80">
+      <div class="recessed rounded-xl p-4 bg-surface-container-lowest">
         <img
           class="rounded-lg w-full opacity-70"
           src="/images/casestudy-dashboard.jpg"
