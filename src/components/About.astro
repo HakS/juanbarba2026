@@ -1,5 +1,8 @@
 ---
-const stack = ['React', 'Node.js', 'PostgreSQL', 'AWS Cloud'];
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const t = useTranslations(getLangFromUrl(Astro.url)).about;
+const stack = ['Angular', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'AWS Cloud'];
 ---
 
 <section id="about" class="max-w-[1280px] mx-auto px-16 py-section-gap">
@@ -9,27 +12,19 @@ const stack = ['React', 'Node.js', 'PostgreSQL', 'AWS Cloud'];
     >
       <img
         class="w-full h-full object-cover contrast-125 brightness-90"
-        src="/images/portrait-juan.jpg"
-        alt="Portrait of Juan"
+        src="/images/portrait-juan.png"
+        alt={t.portraitAlt}
       />
     </div>
     <div class="flex-1 space-y-10">
-      <h2 class="font-h2 text-h2 uppercase headline-wide">Meet Juan.</h2>
+      <h2 class="font-h2 text-h2 uppercase headline-wide">{t.title}</h2>
       <div class="space-y-6 text-body-lg text-on-surface-variant">
-        <p>
-          With over 10 years as a Full-Stack developer, I've seen complex
-          systems fail because they were over-engineered. My passion is the
-          inverse: creating the simplest possible solution for complex problems.
-        </p>
-        <p>
-          I don't just write code; I architect systems that work for you, so you
-          don't have to work for the system.
-        </p>
+        {t.paragraphs.map((p) => <p>{p}</p>)}
       </div>
       <div class="pt-10 border-t border-white/5">
         <span
           class="text-[10px] font-mono-label text-outline uppercase tracking-[0.3em] block mb-6"
-          >Stack</span
+          >{t.stackLabel}</span
         >
         <div
           class="flex flex-wrap gap-4 text-xs font-mono-label text-primary uppercase"

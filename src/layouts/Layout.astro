@@ -1,31 +1,58 @@
 ---
 import '../styles/global.css';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
-interface Props {
-  title?: string;
-  description?: string;
-}
-
-const {
-  title = 'Juan | Architect of Systems - Simple Web Tools Specialist',
-  description = 'Custom web tools ready in 2-3 days. Simple, practical, ready to use. Built for efficiency, not complexity.',
-} = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const forceLang = import.meta.env.PUBLIC_FORCE_LANG ?? '';
 ---
 
 <!doctype html>
-<html class="dark" lang="en">
+<html class="dark" lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+    <meta name="description" content={t.meta.description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site ?? Astro.url).href} />
+    <link rel="alternate" hreflang="es" href={new URL('/es/', Astro.site ?? Astro.url).href} />
+    <script is:inline define:vars={{ forceLang }}>
+      (function () {
+        try {
+          var path = location.pathname;
+          var current = path === '/es' || path.startsWith('/es/') ? 'es' : 'en';
+          var stored = null;
+          try { stored = localStorage.getItem('lang'); } catch (e) {}
+
+          var target;
+          if (stored === 'en' || stored === 'es') {
+            target = stored;
+          } else if (forceLang === 'en' || forceLang === 'es') {
+            target = forceLang;
+          } else {
+            var browser = (navigator.language || '').slice(0, 2).toLowerCase();
+            target = browser === 'es' ? 'es' : 'en';
+          }
+
+          if (target === current) return;
+
+          var newPath;
+          if (target === 'es') {
+            newPath = '/es' + (path === '/' ? '/' : path);
+          } else {
+            newPath = path.replace(/^\/es\/?/, '/');
+          }
+          location.replace(newPath + location.search + location.hash);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Space+Grotesk:wght@400;500;700&family=Inter:wght@700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     />
-    <title>{title}</title>
+    <title>{t.meta.title}</title>
   </head>
   <body
     class="bg-background text-on-background font-body-md selection:bg-primary/30 selection:text-white"

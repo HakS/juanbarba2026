@@ -1,4 +1,7 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const t = useTranslations(getLangFromUrl(Astro.url)).footer;
 const year = new Date().getFullYear();
 ---
 
@@ -12,16 +15,18 @@ const year = new Date().getFullYear();
     <div
       class="flex gap-12 text-[10px] font-mono-label uppercase tracking-[0.2em] text-on-surface-variant"
     >
-      <a class="hover:text-primary transition-colors" href="#how-it-works"
-        >Architecture</a
-      >
-      <a class="hover:text-primary transition-colors" href="#case-study">Process</a>
-      <a class="hover:text-primary transition-colors" href="#about">Contact</a>
+      {
+        t.links.map((l) => (
+          <a class="hover:text-primary transition-colors" href={l.href}>
+            {l.label}
+          </a>
+        ))
+      }
     </div>
     <div
       class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-outline"
     >
-      Built for Efficiency
+      {t.tagline}
     </div>
   </div>
 </footer>

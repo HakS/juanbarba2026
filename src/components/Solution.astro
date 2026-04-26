@@ -1,22 +1,7 @@
 ---
-const features = [
-  {
-    title: 'Browser-based',
-    body: 'Access from any device without installing anything.',
-  },
-  {
-    title: 'Zero Setup',
-    body: 'Lives in the cloud, always up to date and ready to work.',
-  },
-  {
-    title: 'Pure Simplicity',
-    body: 'Designed with a "one-button" philosophy. No training needed.',
-  },
-  {
-    title: 'Bespoke Build',
-    body: 'I build exactly what you need, not generic bloated software.',
-  },
-];
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const t = useTranslations(getLangFromUrl(Astro.url)).solution;
 ---
 
 <section
@@ -30,17 +15,17 @@ const features = [
         <img
           class="w-full h-auto rounded-xl opacity-80"
           src="/images/solution-wireframe.jpg"
-          alt="Abstract 3D digital wireframe representing system architecture"
+          alt={t.imageAlt}
         />
       </div>
     </div>
     <div class="flex-1 space-y-12">
       <h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">
-        Automating the manual into one-click tools.
+        {t.title}
       </h2>
       <div class="grid grid-cols-2 gap-10">
         {
-          features.map((f) => (
+          t.features.map((f) => (
             <div class="space-y-3">
               <h4 class="text-white font-bold text-sm uppercase tracking-wider">
                 {f.title}

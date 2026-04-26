@@ -1,10 +1,14 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const t = useTranslations(getLangFromUrl(Astro.url)).examples;
+const [client, order, sync, booking] = t.cards;
 ---
 
 <section class="max-w-[1280px] mx-auto px-16 py-section-gap">
   <div class="text-center mb-24">
     <h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">
-      Built for Action
+      {t.title}
     </h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -13,15 +17,12 @@
     >
       <div class="p-10 flex justify-between items-start">
         <div>
-          <h4 class="font-h3 text-h3 uppercase mb-3">Client Management</h4>
-          <p class="text-on-surface-variant">
-            Tracks customer history, preferences, and total spending in one
-            view.
-          </p>
+          <h4 class="font-h3 text-h3 uppercase mb-3">{client!.title}</h4>
+          <p class="text-on-surface-variant">{client!.body}</p>
         </div>
         <span
           class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
-          >groups</span
+          >{client!.icon}</span
         >
       </div>
       <div class="mt-auto px-10 pb-10">
@@ -41,14 +42,12 @@
     >
       <div class="p-10 flex justify-between items-start">
         <div>
-          <h4 class="font-h3 text-h3 uppercase mb-3">Order Tracking</h4>
-          <p class="text-on-surface-variant">
-            Visualizes status from "Pending" to "Delivered" in one tap.
-          </p>
+          <h4 class="font-h3 text-h3 uppercase mb-3">{order!.title}</h4>
+          <p class="text-on-surface-variant">{order!.body}</p>
         </div>
         <span
           class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
-          >inventory_2</span
+          >{order!.icon}</span
         >
       </div>
       <div class="mt-auto px-10 pb-10">
@@ -56,12 +55,12 @@
           <div
             class="flex-1 h-20 bg-zinc-950/80 border border-white/5 rounded-lg flex items-center justify-center font-mono-label text-primary recessed"
           >
-            PENDING
+            {t.labels.pending}
           </div>
           <div
             class="flex-1 h-20 bg-zinc-950/80 border border-white/5 rounded-lg flex items-center justify-center font-mono-label text-emerald-500 recessed"
           >
-            DONE
+            {t.labels.done}
           </div>
         </div>
       </div>
@@ -72,15 +71,12 @@
     >
       <div class="p-10 flex justify-between items-start">
         <div>
-          <h4 class="font-h3 text-h3 uppercase mb-3">Online Sync Form</h4>
-          <p class="text-on-surface-variant">
-            Syncs data automatically with your database and notifies you
-            instantly.
-          </p>
+          <h4 class="font-h3 text-h3 uppercase mb-3">{sync!.title}</h4>
+          <p class="text-on-surface-variant">{sync!.body}</p>
         </div>
         <span
           class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
-          >dynamic_form</span
+          >{sync!.icon}</span
         >
       </div>
       <div class="mt-auto px-10 pb-10">
@@ -96,7 +92,7 @@
           <div
             class="flex justify-between text-[10px] font-mono-label text-outline uppercase tracking-widest"
           >
-            <span>SYNCING DATA</span>
+            <span>{t.labels.syncing}</span>
             <span>65%</span>
           </div>
         </div>
@@ -108,15 +104,12 @@
     >
       <div class="p-10 flex justify-between items-start">
         <div>
-          <h4 class="font-h3 text-h3 uppercase mb-3">Booking System</h4>
-          <p class="text-on-surface-variant">
-            Manages calendars effortlessly. Let clients book their own time
-            slots.
-          </p>
+          <h4 class="font-h3 text-h3 uppercase mb-3">{booking!.title}</h4>
+          <p class="text-on-surface-variant">{booking!.body}</p>
         </div>
         <span
           class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
-          >calendar_month</span
+          >{booking!.icon}</span
         >
       </div>
       <div class="mt-auto px-10 pb-10">

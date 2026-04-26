@@ -1,4 +1,7 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const t = useTranslations(getLangFromUrl(Astro.url)).caseStudy;
 ---
 
 <section id="case-study" class="max-w-[1280px] mx-auto px-16 py-section-gap">
@@ -8,35 +11,29 @@
     <div class="flex-1">
       <span
         class="text-[10px] font-mono-label text-primary uppercase tracking-[0.3em] mb-8 block"
-        >Real Impact</span
+        >{t.eyebrow}</span
       >
       <h2 class="font-h2 text-h2 mb-10 uppercase headline-wide">
-        Chaos to 1-Click.
+        {t.title}
       </h2>
       <blockquote
         class="text-body-lg text-on-surface mb-10 italic leading-relaxed opacity-90 border-l-2 border-primary/30 pl-8"
       >
-        "We were losing hours everyday just answering 'where is my order?' in
-        WhatsApp. Juan built a simple dashboard where we just click once, and
-        the customer gets an automated update. We saved 15+ hours a week and
-        eliminated 90% of our manual tracking errors."
+        {t.quote}
       </blockquote>
       <div class="flex gap-16">
-        <div>
-          <span class="block text-4xl font-extrabold text-white mb-2">15h+</span
-          >
-          <span
-            class="text-[10px] font-mono-label text-outline uppercase tracking-widest"
-            >Weekly Time Saved</span
-          >
-        </div>
-        <div>
-          <span class="block text-4xl font-extrabold text-white mb-2">90%</span>
-          <span
-            class="text-[10px] font-mono-label text-outline uppercase tracking-widest"
-            >Reduced Errors</span
-          >
-        </div>
+        {
+          t.stats.map((s) => (
+            <div>
+              <span class="block text-4xl font-extrabold text-white mb-2">
+                {s.value}
+              </span>
+              <span class="text-[10px] font-mono-label text-outline uppercase tracking-widest">
+                {s.label}
+              </span>
+            </div>
+          ))
+        }
       </div>
     </div>
     <div class="flex-1 w-full">
@@ -44,7 +41,7 @@
         <img
           class="rounded-lg w-full opacity-70"
           src="/images/casestudy-dashboard.jpg"
-          alt="Close-up of a minimalist data visualization dashboard"
+          alt={t.imageAlt}
         />
       </div>
     </div>

@@ -1,36 +1,22 @@
 ---
-const cards = [
-  {
-    icon: 'table_view',
-    title: 'Excel Overload',
-    body: 'Spreadsheets that have become too slow, confusing, or prone to accidental data deletion.',
-  },
-  {
-    icon: 'chat',
-    title: 'Chat Chaos',
-    body: "Losing track of requests in a sea of messages. No clear overview of what's pending or done.",
-  },
-  {
-    icon: 'history',
-    title: 'Manual Cycles',
-    body: 'Doing the same data entry over and over again instead of focusing on growing your business.',
-  },
-];
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const t = useTranslations(getLangFromUrl(Astro.url)).problem;
 ---
 
 <section id="how-it-works" class="max-w-[1280px] mx-auto px-16 py-section-gap">
   <div class="flex flex-col items-center text-center mb-24">
     <span
       class="text-mono-label text-primary uppercase tracking-[0.3em] mb-6 text-[10px]"
-      >The Friction</span
+      >{t.eyebrow}</span
     >
     <h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">
-      Are you stuck in manual loops?
+      {t.title}
     </h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
     {
-      cards.map((card) => (
+      t.cards.map((card) => (
         <div class="glass-panel p-12 rounded-xl space-y-8">
           <span class="material-symbols-outlined text-3xl text-primary/70">
             {card.icon}
