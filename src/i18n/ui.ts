@@ -13,16 +13,16 @@ const yearsExperience = new Date().getFullYear() - CAREER_START_YEAR;
 export const ui = {
   en: {
     meta: {
-      title: 'Custom Web Tools for Small Businesses | Juan Barba',
+      title: 'Custom Web Tools for Small Businesses | JB Dev',
       description:
         'Custom web tools by a full-stack dev in Valencia, Spain. Simple ones in 2–3 days, larger systems on a fixed timeline. Dashboards, booking flows, automation.',
       home: {
-        title: 'Custom Web Tools for Small Businesses | Juan Barba',
+        title: 'Custom Web Tools for Small Businesses | JB Dev',
         description:
           'Custom web tools by a full-stack dev in Valencia, Spain. Simple ones in 2–3 days, larger systems on a fixed timeline. Dashboards, booking flows, automation.',
       },
       services: {
-        title: 'Internal Tools, Dashboards & Automation | Juan Barba',
+        title: 'Internal Tools, Dashboards & Automation | JB Dev',
         description:
           'Internal tools, dashboards, and process automation for small businesses in Spain. Fixed scope, fixed price — small tools in days, full systems in weeks.',
       },
@@ -32,7 +32,7 @@ export const ui = {
           'Juan Barba is a full-stack developer based in Valencia, Spain, building simple internal tools that replace spreadsheets and manual workflows for small businesses.',
       },
       privacy: {
-        title: 'Privacy | Juan Barba',
+        title: 'Privacy | JB Dev',
         description:
           'Privacy notice for juanbarba.vercel.app — what data is collected, why, and your rights under GDPR.',
       },
@@ -392,16 +392,16 @@ export const ui = {
   },
   es: {
     meta: {
-      title: 'Herramientas Web a Medida para PyMEs | Juan Barba',
+      title: 'Herramientas Web a Medida para PyMEs | JB Dev',
       description:
         'Herramientas web a medida en Valencia, España. Las simples en 2–3 días, sistemas más grandes con plazo cerrado. Dashboards, reservas, automatización.',
       home: {
-        title: 'Herramientas Web a Medida para PyMEs | Juan Barba',
+        title: 'Herramientas Web a Medida para PyMEs | JB Dev',
         description:
           'Herramientas web a medida en Valencia, España. Las simples en 2–3 días, sistemas más grandes con plazo cerrado. Dashboards, reservas, automatización.',
       },
       services: {
-        title: 'Herramientas Internas, Dashboards y Automatización | Juan Barba',
+        title: 'Herramientas Internas, Dashboards y Automatización | JB Dev',
         description:
           'Herramientas internas, dashboards y automatización para PyMEs en España. Alcance y precio cerrados — pequeñas en días, sistemas completos en semanas.',
       },
@@ -411,7 +411,7 @@ export const ui = {
           'Juan Barba, desarrollador full-stack en Valencia, España. Construye herramientas internas simples que sustituyen hojas de cálculo y procesos manuales para PyMEs.',
       },
       privacy: {
-        title: 'Privacidad | Juan Barba',
+        title: 'Privacidad | JB Dev',
         description:
           'Aviso de privacidad de juanbarba.vercel.app — qué datos se recogen, por qué, y tus derechos bajo el RGPD.',
       },

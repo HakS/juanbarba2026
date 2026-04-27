@@ -34,7 +34,7 @@ export function websiteSchema(site: URL, lang: Lang) {
     '@type': 'WebSite',
     '@id': `${site.href}#website`,
     url: site.href,
-    name: 'Juan Barba',
+    name: 'JB Dev',
     description: t.meta.home.description,
     inLanguage: langCode(lang),
     publisher: { '@id': localBusinessId(site) },
@@ -74,7 +74,7 @@ export function localBusinessSchema(site: URL, lang: Lang) {
   return {
     '@type': 'ProfessionalService',
     '@id': localBusinessId(site),
-    name: 'Juan Barba',
+    name: 'JB Dev',
     legalName: 'Juan Barba',
     description: t.meta.home.description,
     url: homeUrl,
