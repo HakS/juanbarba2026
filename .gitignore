@@ -39,3 +39,5 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Local source assets (not served by the site)
 public/images/me/
+
+STRATEGY.md

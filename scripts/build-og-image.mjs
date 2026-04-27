@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+// Generates public/og-default.png — the social card used for OG/Twitter/JSON-LD Person.image.
+// Re-run after edits: `bun run og`
+import sharp from 'sharp';
+import { writeFile, mkdir } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const outPath = resolve(__dirname, '..', 'public', 'og-default.png');
+
+const W = 1200;
+const H = 630;
+
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f10"/>
+      <stop offset="100%" stop-color="#191c1e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="${W}" height="${H}" fill="url(#bg)"/>
+  <rect width="${W}" height="${H}" fill="url(#glow)"/>
+
+  <!-- decorative architectural circle on the right -->
+  <g transform="translate(900 315)" opacity="0.55">
+    <circle r="220" fill="none" stroke="#6366f1" stroke-opacity="0.18" stroke-width="1"/>
+    <circle r="160" fill="none" stroke="#6366f1" stroke-opacity="0.28" stroke-width="1"/>
+    <circle r="100" fill="none" stroke="#6366f1" stroke-opacity="0.45" stroke-width="1"/>
+    <circle r="40" fill="#6366f1" fill-opacity="0.65"/>
+    <line x1="-220" y1="0" x2="220" y2="0" stroke="#6366f1" stroke-opacity="0.18" stroke-width="1"/>
+    <line x1="0" y1="-220" x2="0" y2="220" stroke="#6366f1" stroke-opacity="0.18" stroke-width="1"/>
+  </g>
+
+  <!-- top-left wordmark -->
+  <g transform="translate(80 90)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" fill="#e0e3e5">
+    <rect x="0" y="-20" width="36" height="3" fill="#6366f1"/>
+    <text x="0" y="14" font-size="18" font-weight="700" letter-spacing="6" fill="#c7c4d7">JUAN BARBA</text>
+  </g>
+
+  <!-- main headline -->
+  <g transform="translate(80 270)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" fill="#e0e3e5">
+    <text x="0" y="0" font-size="78" font-weight="800" letter-spacing="-2.5">Custom web tools.</text>
+    <text x="0" y="92" font-size="78" font-weight="800" letter-spacing="-2.5" fill="#6366f1">Built in days.</text>
+  </g>
+
+  <!-- supporting copy -->
+  <g transform="translate(80 460)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" fill="#c7c4d7">
+    <text x="0" y="0" font-size="26" font-weight="500">Internal tools, dashboards &amp; automation</text>
+    <text x="0" y="38" font-size="26" font-weight="500">for small businesses across Spain.</text>
+  </g>
+
+  <!-- footer line -->
+  <g transform="translate(80 565)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" fill="#908fa0">
+    <text x="0" y="0" font-size="16" letter-spacing="3" font-weight="600">JUANBARBA.VERCEL.APP   ·   VALENCIA, SPAIN</text>
+  </g>
+</svg>`;
+
+await mkdir(dirname(outPath), { recursive: true });
+await sharp(Buffer.from(svg)).png({ quality: 92, compressionLevel: 9 }).toFile(outPath);
+console.log(`✓ Wrote ${outPath}`);
+
+// Also save the SVG source alongside for inspection / future tweaks.
+const svgPath = outPath.replace(/\.png$/, '.svg');
+await writeFile(svgPath, svg);
+console.log(`✓ Wrote ${svgPath} (source)`);

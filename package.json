@@ -6,11 +6,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "og": "node scripts/build-og-image.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0",
     "tailwindcss": "^4.0.0",
     "@tailwindcss/vite": "^4.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.7.2"
   }
 }

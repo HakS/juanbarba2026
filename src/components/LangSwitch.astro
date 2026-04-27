@@ -1,11 +1,16 @@
 ---
-import { getLangFromUrl, languages, type Lang } from '../i18n/ui';
+import { getLangFromUrl, languages, localizedPath, type Lang } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
 
+// Strip locale prefix from current path so we can rebuild it for each language.
+const currentPath = Astro.url.pathname;
+const isEs = currentPath === '/es' || currentPath === '/es/' || currentPath.startsWith('/es/');
+const basePath = isEs ? (currentPath.replace(/^\/es/, '') || '/') : currentPath;
+
 const hrefFor: Record<Lang, string> = {
-  en: '/',
-  es: '/es/',
+  en: localizedPath('en', basePath),
+  es: localizedPath('es', basePath),
 };
 ---
 

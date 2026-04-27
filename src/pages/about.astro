@@ -1,47 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import Problem from '../components/Problem.astro';
-import Solution from '../components/Solution.astro';
-import Examples from '../components/Examples.astro';
-import CaseStudy from '../components/CaseStudy.astro';
-import FAQ from '../components/FAQ.astro';
+import About from '../components/About.astro';
+import Philosophy from '../components/Philosophy.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { ui, useTranslations } from '../i18n/ui';
 import {
-  faqSchema,
+  breadcrumbSchema,
   graph,
   localBusinessSchema,
   personSchema,
-  websiteSchema,
 } from '../lib/schema';
 
-const t = useTranslations('en').meta.home;
+const t = useTranslations('en').meta.about;
 const site = Astro.site ?? new URL('https://juanbarba.vercel.app');
-const homeFaq = ui.en.faq.items.slice(0, 3);
+const breadcrumb = ui.en.breadcrumb;
 const schema = graph(
-  websiteSchema(site, 'en'),
   localBusinessSchema(site, 'en'),
   personSchema(site, 'en'),
-  faqSchema(homeFaq),
+  breadcrumbSchema(site, 'en', [
+    { name: breadcrumb.home, path: '/' },
+    { name: breadcrumb.about, path: '/about/' },
+  ]),
 );
 ---
 
-<Layout title={t.title} description={t.description} canonical="/">
+<Layout title={t.title} description={t.description} canonical="/about/">
   <Fragment slot="head">
     <JsonLd data={schema} />
   </Fragment>
   <Nav />
   <main class="pt-32">
-    <Hero />
-    <Problem />
-    <Solution />
-    <Examples />
-    <CaseStudy />
-    <FAQ limit={3} showCta />
+    <About headingLevel="h1" />
+    <Philosophy />
     <FinalCTA />
   </main>
   <Footer />

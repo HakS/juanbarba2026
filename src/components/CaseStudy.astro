@@ -1,12 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+import caseStudyImage from '../assets/images/casestudy-dashboard.jpg';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 const t = useTranslations(getLangFromUrl(Astro.url)).caseStudy;
 ---
 
-<section id="case-study" class="max-w-[1280px] mx-auto px-16 py-section-gap">
+<section id="case-study" class="max-w-[1280px] mx-auto px-6 sm:px-10 md:px-16 py-section-gap">
   <div
-    class="glass-panel rounded-3xl p-20 flex flex-col md:flex-row gap-20 items-center border border-on-surface/10"
+    class="glass-panel rounded-3xl p-8 sm:p-12 md:p-20 flex flex-col md:flex-row gap-12 md:gap-20 items-center border border-on-surface/10"
   >
     <div class="flex-1">
       <span
@@ -17,10 +19,13 @@ const t = useTranslations(getLangFromUrl(Astro.url)).caseStudy;
         {t.title}
       </h2>
       <blockquote
-        class="text-body-lg text-on-surface mb-10 italic leading-relaxed opacity-90 border-l-2 border-primary/30 pl-8"
+        class="text-body-lg text-on-surface italic leading-relaxed opacity-90 border-l-2 border-primary/30 pl-8"
       >
         {t.quote}
       </blockquote>
+      <p class="mt-4 mb-10 pl-8 text-[10px] font-mono-label text-outline uppercase tracking-[0.2em]">
+        — {t.author}
+      </p>
       <div class="flex gap-16">
         {
           t.stats.map((s) => (
@@ -38,10 +43,13 @@ const t = useTranslations(getLangFromUrl(Astro.url)).caseStudy;
     </div>
     <div class="flex-1 w-full" data-reveal>
       <div class="recessed rounded-xl p-4 bg-surface-container-lowest">
-        <img
+        <Image
           class="rounded-lg w-full opacity-70"
-          src="/images/casestudy-dashboard.jpg"
+          src={caseStudyImage}
           alt={t.imageAlt}
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 768px) 600px, 100vw"
+          loading="lazy"
         />
       </div>
     </div>

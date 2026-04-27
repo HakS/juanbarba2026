@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero-architecture.jpg';
 import { WHATSAPP_URL } from '../config/contact';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
@@ -6,7 +8,7 @@ const t = useTranslations(getLangFromUrl(Astro.url)).hero;
 ---
 
 <section
-  class="max-w-[1280px] mx-auto px-16 py-32 flex flex-col md:flex-row items-center gap-16"
+  class="max-w-[1280px] mx-auto px-6 sm:px-10 md:px-16 py-32 flex flex-col md:flex-row items-center gap-16"
 >
   <div class="flex-1 space-y-8">
     <div
@@ -55,10 +57,14 @@ const t = useTranslations(getLangFromUrl(Astro.url)).hero;
     <div
       class="relative glass-panel w-full h-full rounded-2xl overflow-hidden flex items-center justify-center border border-on-surface/10"
     >
-      <img
+      <Image
         class="w-full h-full object-cover opacity-40 mix-blend-luminosity"
-        src="/images/hero-architecture.jpg"
-        alt="Monochromatic 3D render of abstract architectural geometric structure"
+        src={heroImage}
+        alt={t.imageAlt}
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 768px) 512px, 100vw"
+        loading="eager"
+        fetchpriority="high"
       />
     </div>
   </div>

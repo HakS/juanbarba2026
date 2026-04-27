@@ -1,0 +1,71 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+interface Props {
+  limit?: number;
+  showCta?: boolean;
+}
+
+const { limit, showCta = false } = Astro.props as Props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang).faq;
+const items = limit ? t.items.slice(0, limit) : t.items;
+const moreHref = lang === 'es' ? '/es/services/#faq' : '/services/#faq';
+const moreLabel = lang === 'es' ? 'Ver todas las preguntas →' : 'See all questions →';
+---
+
+<section id="faq" class="max-w-[1280px] mx-auto px-6 sm:px-10 md:px-16 py-section-gap">
+  <div class="text-center mb-16">
+    <span
+      class="text-[10px] font-mono-label text-primary uppercase tracking-[0.3em] mb-6 block"
+      >{t.eyebrow}</span
+    >
+    <h2 class="font-h2 text-h2 text-on-surface uppercase headline-wide">
+      {t.title}
+    </h2>
+  </div>
+  <div class="max-w-3xl mx-auto space-y-4">
+    {
+      items.map((item) => (
+        <details
+          class="glass-panel rounded-xl border border-on-surface/10 group [&[open]]:border-primary/30 transition-colors"
+          data-reveal
+        >
+          <summary class="cursor-pointer list-none p-6 sm:p-8 flex items-start justify-between gap-6">
+            <h3 class="font-h3 text-base sm:text-lg text-on-surface font-bold">
+              {item.q}
+            </h3>
+            <span
+              class="material-symbols-outlined text-on-surface-variant group-[&[open]]:rotate-45 transition-transform shrink-0"
+              aria-hidden="true"
+            >
+              add
+            </span>
+          </summary>
+          <div class="px-6 sm:px-8 pb-6 sm:pb-8 -mt-2">
+            <p class="text-on-surface-variant leading-relaxed">{item.a}</p>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+  {
+    showCta && (
+      <div class="text-center mt-12">
+        <a
+          href={moreHref}
+          class="text-sm font-mono-label uppercase tracking-[0.2em] text-primary hover:text-on-surface transition-colors"
+        >
+          {moreLabel}
+        </a>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

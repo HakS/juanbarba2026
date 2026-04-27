@@ -1,47 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import Problem from '../components/Problem.astro';
+import Services from '../components/Services.astro';
 import Solution from '../components/Solution.astro';
 import Examples from '../components/Examples.astro';
-import CaseStudy from '../components/CaseStudy.astro';
+import Process from '../components/Process.astro';
+import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { ui, useTranslations } from '../i18n/ui';
 import {
+  breadcrumbSchema,
   faqSchema,
   graph,
   localBusinessSchema,
-  personSchema,
-  websiteSchema,
+  serviceSchema,
 } from '../lib/schema';
 
-const t = useTranslations('en').meta.home;
+const t = useTranslations('en').meta.services;
 const site = Astro.site ?? new URL('https://juanbarba.vercel.app');
-const homeFaq = ui.en.faq.items.slice(0, 3);
+const breadcrumb = ui.en.breadcrumb;
 const schema = graph(
-  websiteSchema(site, 'en'),
   localBusinessSchema(site, 'en'),
-  personSchema(site, 'en'),
-  faqSchema(homeFaq),
+  serviceSchema(site, 'en'),
+  faqSchema(ui.en.faq.items),
+  breadcrumbSchema(site, 'en', [
+    { name: breadcrumb.home, path: '/' },
+    { name: breadcrumb.services, path: '/services/' },
+  ]),
 );
 ---
 
-<Layout title={t.title} description={t.description} canonical="/">
+<Layout title={t.title} description={t.description} canonical="/services/">
   <Fragment slot="head">
     <JsonLd data={schema} />
   </Fragment>
   <Nav />
   <main class="pt-32">
-    <Hero />
-    <Problem />
+    <Services headingLevel="h1" />
     <Solution />
     <Examples />
-    <CaseStudy />
-    <FAQ limit={3} showCta />
+    <Process />
+    <Pricing />
+    <FAQ />
     <FinalCTA />
   </main>
   <Footer />

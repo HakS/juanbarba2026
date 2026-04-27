@@ -18,10 +18,12 @@ src/
   config/       # contact.ts — WHATSAPP_NUMBER / WHATSAPP_URL / EMAIL
   i18n/         # ui.ts — full en/es translation dict + helpers
   layouts/      # Layout.astro — html shell, fonts, meta, lang detector
-  pages/        # index.astro (en) + es/index.astro
+  lib/          # schema.ts — JSON-LD builders (WebSite/Person/LocalBusiness/etc.)
+  pages/        # index.astro / services.astro / about.astro (en) + es/* mirror
+  assets/
+    images/     # source images consumed by Astro <Image> (optimized at build)
   styles/       # global.css — @theme tokens + .glass-panel/.recessed/.indigo-glow
-public/
-  images/       # static portfolio imagery (downloaded from Stitch AI URLs)
+public/         # static assets fetched by URL untouched: favicons, logo, robots.txt, og-default.png
 ui_reference/   # original Stitch mockup (code.html, DESIGN.md, screen.png) — read-only reference, not built
 ```
 
@@ -31,14 +33,9 @@ Two locales: `en` (default, served at `/`) and `es` (served at `/es/`). Configur
 
 **Where translations live**: `src/i18n/ui.ts` — single typed dict with both languages. Components pull their slice via `useTranslations(getLangFromUrl(Astro.url))`. No prop drilling.
 
-**Language selection** (priority order, evaluated by an inline pre-paint script in `Layout.astro`):
-1. `localStorage.lang` — set when the user clicks the `LangSwitch`. Persists across visits.
-2. `PUBLIC_FORCE_LANG` env var — build-time override. Used locally to develop in Spanish without clicking. Leave unset on Vercel.
-3. `navigator.language` — first-visit fallback; `'es'` browsers go to `/es/`, everything else to `/`.
+**Language selection**: there is no automatic redirect. Each URL serves the language declared by its path. The `LangSwitch` toggle in the nav lets users switch and persists their choice in `localStorage.lang` (used only to remember the manual choice, not to redirect).
 
-**Local dev override**: copy `.env.example` to `.env` and uncomment `PUBLIC_FORCE_LANG=es`. The repo ships with a local `.env` already set to `es` (gitignored).
-
-**SEO**: `<link rel="alternate" hreflang>` is emitted for both locales from `Layout.astro`.
+**SEO**: `<link rel="canonical">`, full `hreflang` set (`en`, `es`, `x-default`), Open Graph, Twitter Card, and JSON-LD are emitted from `Layout.astro` based on per-page props (`title`, `description`, `canonical`, `ogImage`, `noindex`). Pages can also inject extra schema into `<head>` via the named `head` slot.
 
 ## Commands
 
@@ -55,8 +52,8 @@ bun run preview
 - **Theming**: the site auto-switches between dark (default) and light via `prefers-color-scheme`. Dark tokens live in the `@theme` block; light tokens override them in a `@media (prefers-color-scheme: light)` block at the bottom of `global.css`. **Always use semantic tokens** (`text-on-surface`, `bg-surface-container-low`, `bg-on-surface/10`, etc.) — never `text-white` / `bg-zinc-*` / `bg-white/X`, which only render correctly in one theme.
 - **Custom utilities**: `.glass-panel`, `.recessed`, `.indigo-glow`, `.headline-wide` are defined once in `global.css`. Reuse them rather than re-implementing the effect inline.
 - **Contact links**: WhatsApp / email URLs must come from `src/config/contact.ts` — there's no other source of truth.
-- **Sections**: each page section is its own `.astro` component. Add a new section by creating one and importing it from `src/pages/index.astro`.
-- **Images**: served from `public/images/` with descriptive filenames. The originals were AI-generated URLs from Stitch (CDN may expire) — they're now local copies.
+- **Sections**: each page section is its own `.astro` component. Add a new section by creating one and importing it from the relevant page (`src/pages/index.astro`, `src/pages/services.astro`, or `src/pages/about.astro` and the `/es/` mirrors).
+- **Images**: source images live in `src/assets/images/` and are rendered with `<Image>` from `astro:assets` so they're hashed, compressed, and served as AVIF/WebP with responsive `srcset`. Only put files in `public/images/` if they need to be fetched by URL untouched (favicons, OG card).
 
 ## Reference
 

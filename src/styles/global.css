@@ -62,12 +62,12 @@
   --font-body-md: "Space Grotesk", system-ui, sans-serif;
   --font-mono-label: "Space Grotesk", system-ui, sans-serif;
 
-  --text-h1: 4rem;
+  --text-h1: clamp(2.25rem, 8vw, 4rem);
   --text-h1--line-height: 1;
   --text-h1--letter-spacing: -0.05em;
   --text-h1--font-weight: 800;
 
-  --text-h2: 2.75rem;
+  --text-h2: clamp(1.75rem, 6vw, 2.75rem);
   --text-h2--line-height: 1.1;
   --text-h2--letter-spacing: -0.04em;
   --text-h2--font-weight: 800;
@@ -97,7 +97,7 @@
   --spacing-unit: 8px;
   --spacing-margin-page: 64px;
   --spacing-container-max: 1280px;
-  --spacing-section-gap: 128px;
+  --spacing-section-gap: clamp(64px, 12vw, 128px);
   --spacing-gutter: 32px;
 }
 
@@ -135,6 +135,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
+  overflow-x: hidden;
 }
 
 .js-reveal [data-reveal] {
@@ -265,7 +266,7 @@ html {
   }
 
   .glass-panel {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.78);
     border: 1px solid rgba(15, 23, 42, 0.08);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
   }

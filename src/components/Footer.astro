@@ -1,32 +1,46 @@
 ---
+import { WHATSAPP_URL } from '../config/contact';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 const t = useTranslations(getLangFromUrl(Astro.url)).footer;
 const year = new Date().getFullYear();
+
+function resolveHref(href: string): string {
+  if (href === 'whatsapp') return WHATSAPP_URL;
+  return href;
+}
 ---
 
 <footer class="w-full border-t border-on-surface/10 py-20 bg-surface-container-lowest">
   <div
-    class="max-w-[1280px] mx-auto px-16 flex flex-col md:flex-row justify-between items-center gap-10"
+    class="max-w-[1280px] mx-auto px-6 sm:px-10 md:px-16 flex flex-col md:flex-row justify-between items-center gap-10"
   >
     <div class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface/40 font-h1">
       Juan © {year}
     </div>
     <div
-      class="flex gap-12 text-[10px] font-mono-label uppercase tracking-[0.2em] text-on-surface-variant"
+      class="flex flex-wrap justify-center gap-x-12 gap-y-3 text-[10px] font-mono-label uppercase tracking-[0.2em] text-on-surface-variant"
     >
       {
-        t.links.map((l) => (
-          <a class="hover:text-primary transition-colors" href={l.href}>
-            {l.label}
-          </a>
-        ))
+        t.links.map((l) => {
+          const isExternal = l.href === 'whatsapp';
+          return (
+            <a
+              class="hover:text-primary transition-colors"
+              href={resolveHref(l.href)}
+              {...(isExternal && { target: '_blank', rel: 'noopener' })}
+            >
+              {l.label}
+            </a>
+          );
+        })
       }
     </div>
     <div
-      class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-outline"
+      class="text-[10px] font-mono-label uppercase tracking-[0.2em] text-outline text-center md:text-right"
     >
-      {t.tagline}
+      <div>{t.location}</div>
+      <div class="opacity-60 mt-1">{t.tagline}</div>
     </div>
   </div>
 </footer>

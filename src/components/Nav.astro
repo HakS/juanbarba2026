@@ -1,18 +1,22 @@
 ---
 import { WHATSAPP_URL } from '../config/contact';
-import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { getLangFromUrl, localizedPath, useTranslations } from '../i18n/ui';
 import LangSwitch from './LangSwitch.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const homeHref = localizedPath(lang, '/');
+const servicesHref = localizedPath(lang, '/services/');
+const aboutHref = localizedPath(lang, '/about/');
 ---
 
 <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
   <div
-    class="glass-panel h-14 px-8 rounded-full flex items-center gap-6 border border-on-surface/10 bg-surface-container-low/60"
+    class="glass-panel h-14 px-8 rounded-full flex items-center gap-6 border border-on-surface/10 bg-surface-container-low/85"
   >
     <a
-      href={lang === 'en' ? '/' : '/es/'}
+      href={homeHref}
       class="flex items-center"
       aria-label="Juan Barba"
     >
@@ -25,15 +29,11 @@ const t = useTranslations(lang);
     <div class="hidden md:flex gap-6 items-center">
       <a
         class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors"
-        href="#how-it-works">{t.nav.howItWorks}</a
+        href={servicesHref}>{t.nav.services}</a
       >
       <a
         class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors"
-        href="#case-study">{t.nav.caseStudy}</a
-      >
-      <a
-        class="text-xs font-mono-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors"
-        href="#about">{t.nav.about}</a
+        href={aboutHref}>{t.nav.about}</a
       >
     </div>
     <div class="h-4 w-px bg-on-surface/10 hidden md:block"></div>
