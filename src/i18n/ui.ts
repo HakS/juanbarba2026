@@ -166,7 +166,7 @@ export const ui = {
     about: {
       title: 'Meet Juan.',
       paragraphs: [
-        `I'm Juan Barba, a full-stack developer based in Valencia, Spain, with over ${yearsExperience} years of experience building software systems for companies across Europe. I work with small businesses and teams remotely throughout Spain.`,
+        `I'm Juan Barba, a full-stack developer now based in Valencia, Spain. Over the last ${yearsExperience}+ years I've built software systems remotely for international teams — bringing that experience to small businesses across Spain.`,
         "I've seen complex systems fail because they were over-engineered. My passion is the inverse: creating the simplest possible solution for complex problems — a tool you can actually use, not a platform you have to learn.",
         "I don't just write code; I architect systems that work for you, so you don't have to work for the system.",
       ],
@@ -199,7 +199,7 @@ export const ui = {
       eyebrow: 'Background',
       title: 'Where I\'ve worked.',
       body:
-        `Over ${yearsExperience}+ years I\'ve built and led software for companies in fintech, e-commerce, logistics, and healthtech across Spain and the EU. I\'ve been a senior engineer, a tech lead, and the only developer in a small startup. The common thread: small teams shipping real systems under real constraints.`,
+        `Over ${yearsExperience}+ years I\'ve built and led software for companies in fintech, e-commerce, logistics, and healthtech, working remotely with international teams across the Americas and Europe. I\'ve been a senior engineer, a tech lead, and the only developer in a small startup. The common thread: small teams shipping real systems under real constraints.`,
       cta: 'Send me a message →',
     },
     services: {
@@ -499,7 +499,7 @@ export const ui = {
     about: {
       title: 'Conoce a Juan.',
       paragraphs: [
-        `Soy Juan Barba, desarrollador full-stack basado en Valencia, España, con más de ${yearsExperience} años construyendo sistemas software para empresas en toda Europa. Trabajo en remoto con PyMEs y equipos de toda España.`,
+        `Soy Juan Barba, desarrollador full-stack ahora basado en Valencia, España. Durante más de ${yearsExperience} años he construido sistemas software en remoto para equipos internacionales — y ahora aplico esa experiencia al servicio de PyMEs en toda España.`,
         'He visto sistemas complejos fallar por estar sobre-diseñados. Mi pasión es la inversa: crear la solución más simple posible para problemas complejos — una herramienta que de verdad puedas usar, no una plataforma que tengas que aprender.',
         'No solo escribo código; diseño sistemas que trabajan para ti, para que tú no tengas que trabajar para el sistema.',
       ],
@@ -532,7 +532,7 @@ export const ui = {
       eyebrow: 'Trayectoria',
       title: 'Dónde he trabajado.',
       body:
-        `En más de ${yearsExperience} años he construido y liderado software para empresas de fintech, e-commerce, logística y healthtech en España y la UE. He sido senior, tech lead y el único desarrollador de una startup pequeña. El hilo común: equipos pequeños entregando sistemas reales bajo restricciones reales.`,
+        `En más de ${yearsExperience} años he construido y liderado software para empresas de fintech, e-commerce, logística y healthtech, trabajando en remoto con equipos internacionales de América y Europa. He sido senior, tech lead y el único desarrollador de una startup pequeña. El hilo común: equipos pequeños entregando sistemas reales bajo restricciones reales.`,
       cta: 'Envíame un mensaje →',
     },
     services: {
