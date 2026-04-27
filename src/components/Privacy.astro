@@ -1,0 +1,77 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { EMAIL } from '../config/contact';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang).privacy;
+---
+
+<section class="max-w-3xl mx-auto px-6 sm:px-10 md:px-16 py-section-gap">
+  <div class="space-y-12">
+    <header class="space-y-4">
+      <h1 class="font-h1 text-h1 text-on-surface uppercase headline-wide">
+        {t.title}
+      </h1>
+      <p class="text-[10px] font-mono-label text-outline uppercase tracking-[0.2em]">
+        {t.lastUpdated}
+      </p>
+    </header>
+
+    <article class="space-y-3">
+      <h2 class="font-h3 text-xl text-on-surface font-bold">{t.who.heading}</h2>
+      <p class="text-on-surface-variant leading-relaxed">{t.who.body}</p>
+      <p class="text-on-surface-variant leading-relaxed">
+        {t.who.contactLabel}{' '}
+        <a
+          href={`mailto:${EMAIL}`}
+          class="text-primary hover:text-on-surface transition-colors"
+          >{EMAIL}</a
+        >
+      </p>
+    </article>
+
+    <article class="space-y-3">
+      <h2 class="font-h3 text-xl text-on-surface font-bold">{t.data.heading}</h2>
+      <p class="text-on-surface-variant leading-relaxed">{t.data.intro}</p>
+      <ul class="list-disc pl-6 space-y-2 text-on-surface-variant leading-relaxed">
+        {t.data.items.map((item) => <li>{item}</li>)}
+      </ul>
+      <p class="text-on-surface-variant leading-relaxed">{t.data.nothingStored}</p>
+    </article>
+
+    <article class="space-y-3">
+      <h2 class="font-h3 text-xl text-on-surface font-bold">{t.why.heading}</h2>
+      <p class="text-on-surface-variant leading-relaxed">{t.why.body}</p>
+    </article>
+
+    <article class="space-y-3">
+      <h2 class="font-h3 text-xl text-on-surface font-bold">{t.thirdParties.heading}</h2>
+      <p class="text-on-surface-variant leading-relaxed">
+        {t.thirdParties.vercel}{' '}
+        <a
+          href="https://vercel.com/legal/privacy-policy"
+          target="_blank"
+          rel="noopener"
+          class="text-primary hover:text-on-surface transition-colors"
+          >{t.thirdParties.vercelLink}</a
+        >.
+      </p>
+      <p class="text-on-surface-variant leading-relaxed">{t.thirdParties.whatsapp}</p>
+    </article>
+
+    <article class="space-y-3">
+      <h2 class="font-h3 text-xl text-on-surface font-bold">{t.rights.heading}</h2>
+      <p class="text-on-surface-variant leading-relaxed">{t.rights.body}</p>
+      <p class="text-on-surface-variant leading-relaxed">
+        {t.rights.aepd}:{' '}
+        <a
+          href="https://www.aepd.es"
+          target="_blank"
+          rel="noopener"
+          class="text-primary hover:text-on-surface transition-colors"
+          >{t.rights.aepdLink}</a
+        >.
+      </p>
+    </article>
+  </div>
+</section>

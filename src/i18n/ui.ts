@@ -31,6 +31,11 @@ export const ui = {
         description:
           'Juan Barba is a full-stack developer based in Valencia, Spain, building simple internal tools that replace spreadsheets and manual workflows for small businesses.',
       },
+      privacy: {
+        title: 'Privacy | Juan Barba',
+        description:
+          'Privacy notice for juanbarba.vercel.app — what data is collected, why, and your rights under GDPR.',
+      },
     },
     nav: {
       services: 'Services',
@@ -333,15 +338,56 @@ export const ui = {
       home: 'Home',
       services: 'Services',
       about: 'About',
+      privacy: 'Privacy',
     },
     footer: {
       links: [
         { label: 'Services', href: '/services/' },
         { label: 'About', href: '/about/' },
+        { label: 'Privacy', href: '/privacy/' },
         { label: 'WhatsApp', href: 'whatsapp' },
       ],
       tagline: 'Built for Efficiency',
       location: 'Valencia, Spain · Working remotely across Spain',
+    },
+    privacy: {
+      title: 'Privacy',
+      lastUpdated: 'Last updated: 2026-04-27',
+      who: {
+        heading: 'Who runs this site',
+        body: 'Juan Barba — independent developer based in Valencia, Spain.',
+        contactLabel: 'Contact:',
+      },
+      data: {
+        heading: 'What data this site collects',
+        intro: 'This site uses Vercel Web Analytics for anonymous traffic measurement. It records:',
+        items: [
+          'Pages visited and their referrers',
+          'Which "Message me on WhatsApp" CTA you click and on which page',
+          'A daily-rotating hash of your IP address and user agent — used only to count unique daily visits, then discarded',
+        ],
+        nothingStored:
+          'No cookies are set. Nothing is stored on your device. No cross-site tracking. No advertising profiles.',
+      },
+      why: {
+        heading: 'Why',
+        body: 'Legal basis: legitimate interest (Art. 6(1)(f) GDPR) — to measure which content actually helps visitors and which CTAs work, so the site can keep improving.',
+      },
+      thirdParties: {
+        heading: 'Third parties',
+        vercel:
+          'Vercel Inc. — hosts this site and provides analytics. Vercel processes data inside the EU.',
+        vercelLink: 'Vercel privacy policy',
+        whatsapp:
+          'WhatsApp / Meta — when you click "Message me on WhatsApp", you leave this site and enter WhatsApp under Meta\'s terms.',
+      },
+      rights: {
+        heading: 'Your rights',
+        body:
+          'You can request access to, correction of, or deletion of any personal data this site holds about you. Email me directly — there is almost certainly nothing to delete (the analytics data is anonymous), but the right is yours.',
+        aepd: 'You may also lodge a complaint with the Spanish Data Protection Authority',
+        aepdLink: 'AEPD',
+      },
     },
   },
   es: {
@@ -363,6 +409,11 @@ export const ui = {
         title: 'Sobre Juan Barba — Desarrollador Full-Stack en España',
         description:
           'Juan Barba, desarrollador full-stack en Valencia, España. Construye herramientas internas simples que sustituyen hojas de cálculo y procesos manuales para PyMEs.',
+      },
+      privacy: {
+        title: 'Privacidad | Juan Barba',
+        description:
+          'Aviso de privacidad de juanbarba.vercel.app — qué datos se recogen, por qué, y tus derechos bajo el RGPD.',
       },
     },
     nav: {
@@ -666,15 +717,56 @@ export const ui = {
       home: 'Inicio',
       services: 'Servicios',
       about: 'Sobre Mí',
+      privacy: 'Privacidad',
     },
     footer: {
       links: [
         { label: 'Servicios', href: '/es/services/' },
         { label: 'Sobre Mí', href: '/es/about/' },
+        { label: 'Privacidad', href: '/es/privacy/' },
         { label: 'WhatsApp', href: 'whatsapp' },
       ],
       tagline: 'Construido para la Eficiencia',
       location: 'Valencia, España · Trabajando en remoto en toda España',
+    },
+    privacy: {
+      title: 'Privacidad',
+      lastUpdated: 'Última actualización: 2026-04-27',
+      who: {
+        heading: 'Quién gestiona este sitio',
+        body: 'Juan Barba — desarrollador independiente en Valencia, España.',
+        contactLabel: 'Contacto:',
+      },
+      data: {
+        heading: 'Qué datos recoge este sitio',
+        intro: 'Este sitio usa Vercel Web Analytics para medir tráfico de forma anónima. Se registra:',
+        items: [
+          'Páginas visitadas y desde dónde llegan',
+          'Qué botón de "Escríbeme por WhatsApp" pulsas y en qué página',
+          'Un hash diario rotatorio de tu IP y user agent — solo para contar visitas únicas del día, luego se descarta',
+        ],
+        nothingStored:
+          'No se instalan cookies. No se guarda nada en tu dispositivo. Sin seguimiento entre sitios. Sin perfiles publicitarios.',
+      },
+      why: {
+        heading: 'Por qué',
+        body: 'Base legal: interés legítimo (Art. 6(1)(f) RGPD) — medir qué contenidos ayudan a los visitantes y qué CTAs funcionan, para seguir mejorando el sitio.',
+      },
+      thirdParties: {
+        heading: 'Terceros',
+        vercel:
+          'Vercel Inc. — aloja este sitio y proporciona la analítica. Vercel procesa los datos dentro de la UE.',
+        vercelLink: 'Política de privacidad de Vercel',
+        whatsapp:
+          'WhatsApp / Meta — al pulsar "Escríbeme por WhatsApp", sales de este sitio y entras en WhatsApp bajo los términos de Meta.',
+      },
+      rights: {
+        heading: 'Tus derechos',
+        body:
+          'Puedes solicitar acceso, rectificación o eliminación de cualquier dato personal que este sitio mantenga sobre ti. Escríbeme directamente — casi con seguridad no habrá nada que borrar (los datos analíticos son anónimos), pero el derecho es tuyo.',
+        aepd: 'También puedes presentar una reclamación ante la Agencia Española de Protección de Datos',
+        aepdLink: 'AEPD',
+      },
     },
   },
 } as const;

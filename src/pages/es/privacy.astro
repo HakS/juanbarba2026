@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Privacy from '../../components/Privacy.astro';
+import Footer from '../../components/Footer.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { ui, useTranslations } from '../../i18n/ui';
+import { breadcrumbSchema, graph, personSchema } from '../../lib/schema';
+
+const t = useTranslations('es').meta.privacy;
+const site = Astro.site ?? new URL('https://juanbarba.vercel.app');
+const breadcrumb = ui.es.breadcrumb;
+const schema = graph(
+  personSchema(site, 'es'),
+  breadcrumbSchema(site, 'es', [
+    { name: breadcrumb.home, path: '/es/' },
+    { name: breadcrumb.privacy, path: '/es/privacy/' },
+  ]),
+);
+---
+
+<Layout title={t.title} description={t.description} canonical="/es/privacy/">
+  <Fragment slot="head">
+    <JsonLd data={schema} />
+  </Fragment>
+  <Nav />
+  <main class="pt-32">
+    <Privacy />
+  </main>
+  <Footer />
+</Layout>
