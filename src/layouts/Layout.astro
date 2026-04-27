@@ -80,6 +80,25 @@ const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_ES';
 
     <script is:inline>document.documentElement.classList.add('js-reveal');</script>
 
+    <script>
+      import { inject, track } from '@vercel/analytics';
+      inject();
+
+      document.querySelectorAll<HTMLElement>('[data-analytics]').forEach((el) => {
+        el.addEventListener('click', () => {
+          const event = el.dataset.analytics;
+          if (!event) return;
+          const props: Record<string, string> = {};
+          for (const [key, value] of Object.entries(el.dataset)) {
+            if (key === 'analytics' || !key.startsWith('analytics') || !value) continue;
+            const suffix = key.slice('analytics'.length);
+            props[suffix.charAt(0).toLowerCase() + suffix.slice(1)] = value;
+          }
+          track(event, Object.keys(props).length ? props : undefined);
+        });
+      });
+    </script>
+
     <slot name="head" />
   </head>
   <body

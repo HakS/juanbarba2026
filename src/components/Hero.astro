@@ -37,6 +37,8 @@ const t = useTranslations(getLangFromUrl(Astro.url)).hero;
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener"
+        data-analytics="contact_whatsapp"
+        data-analytics-location="hero"
         class="bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg indigo-glow transition-all active:scale-95 shadow-xl shadow-primary/20 inline-block text-center"
         >{t.cta}</a
       >

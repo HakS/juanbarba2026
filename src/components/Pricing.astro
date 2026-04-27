@@ -64,6 +64,8 @@ const cta = useTranslations(lang).hero.cta;
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener"
+            data-analytics="contact_whatsapp"
+            data-analytics-location={`pricing_tier_${i}`}
             class:list={[
               'mt-auto inline-block text-center px-6 py-3.5 rounded-lg font-bold text-sm transition-transform active:scale-95',
               'highlighted' in tier && tier.highlighted
