@@ -198,6 +198,10 @@ export const ui = {
           title: 'Honest scope.',
           body: 'Fixed price after a real conversation about what the tool needs to do. If a SaaS or a no-code tool would solve your problem better, I\'ll tell you — even if it means I don\'t get the project.',
         },
+        {
+          title: 'The spec is the work.',
+          body: 'AI writes code, drafts copy, generates UI — fast. What it doesn\'t do is decide what to build, judge when it\'s good enough, or stand behind the result when it ships. I use AI every day; what you\'re paying for is the spec — turning a vague pain point into a system that fits your business and survives real users.',
+        },
       ],
     },
     background: {
@@ -317,6 +321,10 @@ export const ui = {
         {
           q: 'How is this different from using Airtable, Notion, or another SaaS?',
           a: "SaaS platforms are great until you outgrow them. They charge per user, restrict logic to what their template allows, and can change their terms or pricing anytime. A custom tool fits your exact workflow, doesn't charge per seat, and stays under your control. The right answer depends on the use case — I'll tell you honestly when SaaS is the better fit.",
+        },
+        {
+          q: "Can't I just ask ChatGPT to build this?",
+          a: "For a quick prototype, you should — try it. But a tool your business actually depends on takes more than prompts: deciding which 5% of features matter, handling auth and payments without leaking data, and being one person with a phone number when something breaks on a Sunday night. I use AI every day to move faster; what you hire is the judgment that directs it, and the accountability that it works on Monday morning.",
         },
         {
           q: 'What if my needs grow later?',
@@ -577,6 +585,10 @@ export const ui = {
           title: 'Alcance honesto.',
           body: 'Precio cerrado tras una conversación real sobre qué tiene que hacer la herramienta. Si un SaaS o una herramienta no-code resuelve mejor tu problema, te lo digo — aunque eso signifique no llevarme el proyecto.',
         },
+        {
+          title: 'La especificación es el trabajo.',
+          body: 'La IA escribe código, redacta copy y genera UI — rápido. Lo que no hace es decidir qué construir, juzgar cuándo está suficientemente bien, ni responder por el resultado cuando entra en producción. Yo uso IA todos los días; por lo que pagas es por la especificación — convertir un dolor vago en un sistema que encaja con tu negocio y aguanta usuarios reales.',
+        },
       ],
     },
     background: {
@@ -696,6 +708,10 @@ export const ui = {
         {
           q: '¿En qué se diferencia esto de usar Airtable, Notion u otro SaaS?',
           a: 'Las plataformas SaaS están bien hasta que las superas. Cobran por usuario, limitan la lógica a lo que su plantilla permite y pueden cambiar precios o condiciones en cualquier momento. Una herramienta a medida encaja con tu flujo exacto, no cobra por puesto y queda bajo tu control. La respuesta depende del caso — te diré honestamente cuándo el SaaS es mejor opción.',
+        },
+        {
+          q: '¿No puedo pedirle a ChatGPT que lo construya?',
+          a: 'Para un prototipo rápido, deberías — pruébalo. Pero una herramienta de la que depende tu negocio pide más que prompts: decidir qué 5% de funciones importan, gestionar autenticación y pagos sin filtrar datos, y tener a alguien con un número de teléfono cuando algo falla un domingo por la noche. Yo uso IA todos los días para ir más rápido; lo que contratas es el criterio que la dirige, y la responsabilidad de que funcione el lunes por la mañana.',
         },
         {
           q: '¿Y si mis necesidades crecen más adelante?',
