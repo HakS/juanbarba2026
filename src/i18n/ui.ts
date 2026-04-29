@@ -44,11 +44,11 @@ export const ui = {
       message: 'Message',
     },
     hero: {
-      badge: 'Available for new projects',
-      headlineMain: 'Stop managing your business manually.',
-      headlineAccent: 'I build simple web tools for you.',
+      badge: 'Available for new projects · Quote in 48h',
+      headlineMain: 'Custom web tools for small businesses.',
+      headlineAccent: 'Fixed price, days to weeks, you own the code.',
       description:
-        'Simple tools shipped in 2-3 days. Larger systems on a fixed timeline. Built for efficiency, not complexity.',
+        'No retainers, no SaaS lock-in, no quarter-long projects. One conversation, one quote, one shipped tool.',
       cta: 'Message me on WhatsApp',
       expertiseLabel: 'Expertise',
       expertise: `${yearsExperience}+ years of System Architecture`,
@@ -76,7 +76,7 @@ export const ui = {
       ],
     },
     solution: {
-      title: 'Automating the manual into one-click tools.',
+      title: 'Automating whatever isn\'t working into a tool you own.',
       imageAlt: 'Architecture diagram of a custom web tool',
       features: [
         {
@@ -130,6 +130,11 @@ export const ui = {
         pending: 'PENDING',
         done: 'DONE',
         syncing: 'SYNCING DATA',
+      },
+      openDoor: {
+        intro: "If your problem doesn't quite fit any of these — ",
+        linkText: 'message me anyway',
+        outro: '. If it lives in a browser, I can probably build it.',
       },
     },
     caseStudy: {
@@ -339,7 +344,7 @@ export const ui = {
     finalCTA: {
       title: 'Simplify your workflow.',
       description:
-        "Stop doing manually what a tool can do in seconds. Let's scale your operations.",
+        "Whatever you're piecing together to keep things moving — let's build the tool that actually fits.",
       cta: 'Message me on WhatsApp',
     },
     breadcrumb: {
@@ -431,11 +436,11 @@ export const ui = {
       message: 'Escribir',
     },
     hero: {
-      badge: 'Disponible para nuevos proyectos',
-      headlineMain: 'Deja de gestionar tu negocio manualmente.',
-      headlineAccent: 'Construyo herramientas web simples para ti.',
+      badge: 'Disponible para nuevos proyectos · Presupuesto en 48h',
+      headlineMain: 'Herramientas web a medida para PyMEs.',
+      headlineAccent: 'Precio cerrado, de días a semanas, el código es tuyo.',
       description:
-        'Herramientas simples entregadas en 2-3 días. Sistemas más grandes con plazo cerrado. Construidas para la eficiencia, no para la complejidad.',
+        'Sin cuotas mensuales, sin dependencia de SaaS, sin proyectos de meses. Una conversación, un presupuesto, una herramienta entregada.',
       cta: 'Escríbeme por WhatsApp',
       expertiseLabel: 'Experiencia',
       expertise: `Más de ${yearsExperience} años en Arquitectura de Sistemas`,
@@ -463,7 +468,7 @@ export const ui = {
       ],
     },
     solution: {
-      title: 'Automatizando lo manual en herramientas de un clic.',
+      title: 'Automatizando lo que no funciona en una herramienta que es tuya.',
       imageAlt: 'Arquitectura de una herramienta web a medida',
       features: [
         {
@@ -517,6 +522,11 @@ export const ui = {
         pending: 'PENDIENTE',
         done: 'HECHO',
         syncing: 'SINCRONIZANDO',
+      },
+      openDoor: {
+        intro: 'Si tu problema no encaja del todo en estos — ',
+        linkText: 'escríbeme igual',
+        outro: '. Si vive en un navegador, probablemente puedo construirlo.',
       },
     },
     caseStudy: {
@@ -726,7 +736,7 @@ export const ui = {
     finalCTA: {
       title: 'Simplifica tu flujo de trabajo.',
       description:
-        'Deja de hacer manualmente lo que una herramienta puede hacer en segundos. Vamos a escalar tus operaciones.',
+        'Lo que estés sosteniendo con parches para mantenerlo funcionando — construyamos la herramienta que de verdad encaja.',
       cta: 'Escríbeme por WhatsApp',
     },
     breadcrumb: {
